@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import SquatPage from './components/SquatPage';
+import BenchPage from './components/BenchPage';
+import DeadliftPage from './components/DeadliftPage';
+import Navbar from './components/Navbar';
+import MuscleMapPage from './components/MuscleMap'; // Nouvelle importation
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/squat" element={<SquatPage />} />
+        <Route path="/bench" element={<BenchPage />} />
+        <Route path="/deadlift" element={<DeadliftPage />} />
+        <Route path="/muscle-map" element={<MuscleMapPage />} /> {/* Nouvelle route */}
+      </Routes>
+    </Router>
   );
 }
 
