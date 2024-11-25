@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as MuscleSVG } from "../assets/image_muscle.svg";
+import { ReactComponent as MuscleFaceSVG } from "../assets/image_muscle_face.svg";
 import muscleData from "../data/muscleData";
 
 const MuscleMap = () => {
@@ -19,11 +20,12 @@ const MuscleMap = () => {
   return (
     <div className="muscle-page">
       <header>
-        <h1 className="page-title">Carte des Muscles</h1>
+        <h1 className="page-title" style={{fontSize: "3rem",fontWeight: "bold", }}> Carte des Muscles</h1>
         <h4 style={{ textAlign: "center" }}>
           Vous ressentez une gêne ou une douleur ? Ou bien, vous souhaitez juste
-          mieux préparer vos entraînements ?<br></br> Découvrez comment bien échauffer
-          vos muscles pour prévenir les blessures et améliorer vos performances.
+          mieux préparer vos entraînements ?<br></br> Découvrez comment bien
+          échauffer vos muscles pour prévenir les blessures et améliorer vos
+          performances.
         </h4>
       </header>
 
@@ -62,12 +64,11 @@ const MuscleMap = () => {
           </p>
         </section>
 
+        {/* Section avec les deux SVG côte à côte */}
         <section className="interactive-section">
           <div className="svg-container">
-            <MuscleSVG
-              onClick={handleMuscleClick}
-              style={{ width: "100%", maxWidth: "500px", cursor: "pointer" }}
-            />
+            <MuscleSVG onClick={handleMuscleClick} />
+            <MuscleFaceSVG onClick={handleMuscleClick} />
           </div>
         </section>
       </main>

@@ -1,5 +1,3 @@
-/* Fichier : index.css */
-
 /* === Styles généraux === */
 body {
   font-family: Arial, sans-serif;
@@ -126,8 +124,18 @@ button:hover, .close-button:hover {
 
 /* === Carte interactive === */
 .svg-container {
+  display: flex; /* Flexbox pour afficher les SVG côte à côte */
+  justify-content: center;
+  gap: 0px; /* Espace entre les SVG */
   margin: 0 auto;
   text-align: center;
+}
+
+.svg-container svg {
+  cursor: pointer;
+  width: 45%; /* Ajuste selon l'espace disponible */
+  height: 400px; /* Maintient le ratio d'aspect */
+  transition: transform 0.3s ease;
 }
 
 path {
