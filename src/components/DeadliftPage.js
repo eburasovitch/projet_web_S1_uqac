@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "../Modal.css";
+import "../Modal.css"; // Assurez-vous que le chemin est correct
 
 const DeadliftPage = () => {
     const [isQuizzOpen, setIsQuizzOpen] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [feedback, setFeedback] = useState("");
 
@@ -11,7 +12,14 @@ const DeadliftPage = () => {
         setFeedback("");
         setSelectedAnswer(null);
     };
-    const closeQuizz = () => setIsQuizzOpen(false);
+
+    const closeQuizz = () => {
+        setIsClosing(true);
+        setTimeout(() => {
+            setIsClosing(false);
+            setIsQuizzOpen(false);
+        }, 500);
+    };
 
     const handleAnswerChange = (event) => {
         setSelectedAnswer(event.target.value);
@@ -19,7 +27,6 @@ const DeadliftPage = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
         if (selectedAnswer === "correct") {
             setFeedback("Bonne réponse ! 🎉");
         } else {
@@ -35,7 +42,10 @@ const DeadliftPage = () => {
 
             {isQuizzOpen && (
                 <div className="modal" onClick={closeQuizz}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                    <div
+                        className={`modal-content ${isClosing ? "closing" : ""}`}
+                        onClick={(e) => e.stopPropagation()}
+                    >
             <span className="close" onClick={closeQuizz}>
               &times;
             </span>

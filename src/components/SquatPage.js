@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import "../Modal.css"; // Chemin correct pour Modal.css
+import "../Modal.css";
 
-const SquatPage = () => {
-    //regarde si la tab quizz est ouverte
+const BenchPage = () => {
     const [isQuizzOpen, setIsQuizzOpen] = useState(false);
-
-    //stock la réponse
+    const [isClosing, setIsClosing] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
-
-    //message de retour (bon/pas bon)
     const [feedback, setFeedback] = useState("");
 
     const openQuizz = () => {
@@ -16,7 +12,14 @@ const SquatPage = () => {
         setFeedback("");
         setSelectedAnswer(null);
     };
-    const closeQuizz = () => setIsQuizzOpen(false);
+
+    const closeQuizz = () => {
+        setIsClosing(true);
+        setTimeout(() => {
+            setIsClosing(false);
+            setIsQuizzOpen(false);
+        }, 500);
+    };
 
     const handleAnswerChange = (event) => {
         setSelectedAnswer(event.target.value);
@@ -24,8 +27,6 @@ const SquatPage = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        //logique de bonne ou mauvaisse reponse
         if (selectedAnswer === "correct") {
             setFeedback("Bonne réponse ! 🎉");
         } else {
@@ -33,42 +34,32 @@ const SquatPage = () => {
         }
     };
 
-
-    //choix de reponses & questions
     return (
         <div>
-            <h1>Squat</h1>
-            <p>Apprenez la technique correcte pour le squat.</p>
-            <button onClick={openQuizz}>Lancer le Quizz Squat</button>
-
+            <h1>Bench Press</h1>
+            <p>Apprenez la technique correcte pour le bench press.</p>
+            <button onClick={openQuizz}>Lancer le Quizz Bench Press</button>
 
             {isQuizzOpen && (
                 <div className="modal" onClick={closeQuizz}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                    <div
+                        className={`modal-content ${isClosing ? "closing" : ""}`}
+                        onClick={(e) => e.stopPropagation()}
+                    >
             <span className="close" onClick={closeQuizz}>
               &times;
             </span>
-                        <h2>Quizz Squat</h2>
-                        <p className="question">Quelle est la position correcte pour un squat ? </p>
+                        <h2>Quizz Bench Press</h2>
+                        <p>Quelle est la position correcte pour un bench press ?</p>
                         <form onSubmit={handleSubmit}>
                             <label>
                                 <input
                                     type="radio"
                                     name="q1"
-                                    value="courbé"
+                                    value="plat"
                                     onChange={handleAnswerChange}
                                 />{" "}
-                                Dos courbé
-                            </label>
-                            <br />
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="q1"
-                                    value="collés"
-                                    onChange={handleAnswerChange}
-                                />{" "}
-                                Pieds collés
+                                Dos complètement à plat sur le banc
                             </label>
                             <br />
                             <label>
@@ -78,7 +69,17 @@ const SquatPage = () => {
                                     value="correct"
                                     onChange={handleAnswerChange}
                                 />{" "}
-                                Dos droit et pieds écartés à largeur d’épaules
+                                Dos légèrement cambré, pieds fermement au sol
+                            </label>
+                            <br />
+                            <label>
+                                <input
+                                    type="radio"
+                                    name="q1"
+                                    value="détendu"
+                                    onChange={handleAnswerChange}
+                                />{" "}
+                                Épaules détendues et en haut du banc
                             </label>
                             <br />
                             <button type="submit">Valider</button>
@@ -90,4 +91,5 @@ const SquatPage = () => {
         </div>
     );
 };
-export default SquatPage;
+
+export default BenchPage;
