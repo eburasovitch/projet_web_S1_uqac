@@ -1,0 +1,139 @@
+.squat-page {
+    background-color: #f8f9fa;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+ul {
+    margin-left: 20px;
+    color: #555;
+}
+
+.video-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+    border-radius: 8px;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.exercise-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-button {
+    display: block;
+    margin: 30px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quiz-button:hover {
+    background-color: #0056b3;
+}
+
+.content-section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-row {
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement */
+    justify-content: space-between; /* Sépare les colonnes */
+    margin-bottom: 40px; /* Espacement entre les sections */
+}
+
+.content-row.reverse {
+    flex-direction: row-reverse; /* Vidéo à gauche, texte à droite */
+}
+
+.text {
+    flex: 1; /* La moitié de la largeur */
+    padding: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.video {
+    flex: 1; /* La moitié de la largeur */
+    padding: 20px;
+}
+
+.video iframe {
+    width: 100%; /* Vidéo s'adapte à la largeur disponible */
+    height: 315px; /* Hauteur standard */
+    border-radius: 8px;
+    border: none;
+}
+
+.text-between {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.muscle-image {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.muscle-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

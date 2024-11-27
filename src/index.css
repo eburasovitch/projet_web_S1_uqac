@@ -1,0 +1,390 @@
+/* === Styles généraux === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  margin-top: 60px; /* Évite que le contenu soit caché sous la navbar */
+}
+
+h1,
+h2,
+.page-title {
+  color: #222;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+h2,
+.page-title {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+button,
+.close-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.close-button:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* === Barre de navigation === */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: rgba(59, 59, 59, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+/* === Section d'entête avec barre grise et carré transparent === */
+.header-section {
+  background-color: #3a3a3a; /* Fond gris foncé */
+  padding: 40px 20px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+  margin-top: 50px;
+}
+
+.header-section .content-wrapper {
+  background-color: rgba(190, 190, 190, 0.8); /* Fond blanc transparent */
+  padding: 20px;
+  border-radius: 10px; /* Coins arrondis */
+  display: inline-block; /* Pour ajuster la largeur au contenu */
+}
+
+.header-section .page-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000; /* Couleur du texte */
+  text-align: left;
+  margin-left: 10px;
+  
+}
+
+.header-section .header-description {
+  font-size: 1.2rem;
+  color: #353535;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+
+
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* === Carte interactive === */
+.svg-container {
+  display: flex; /* Flexbox pour afficher les SVG côte à côte */
+  justify-content: center;
+  gap: 0px; /* Espace entre les SVG */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.svg-container svg {
+  cursor: pointer;
+  width: 45%; /* Ajuste selon l'espace disponible */
+  height: 400px; /* Maintient le ratio d'aspect */
+  transition: transform 0.3s ease;
+}
+
+path {
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+path:hover {
+  fill: rgba(255, 0, 0, 0.5);
+  stroke: red;
+}
+
+/* === Popup === */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: left;
+  max-width: 600px;
+  width: 90%;
+}
+
+.images-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.muscle-image {
+  width: 48%;
+  border-radius: 8px;
+}
+
+
+
+.popup h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.popup ul {
+  margin: 10px 0;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* === Page principale === */
+.muscle-page {
+  line-height: 1.5;
+}
+
+.muscle-page main {
+  margin-left: 100px; /* Ajoute un espace à gauche */
+}
+
+.muscle-page li {
+  margin-left: 20px;
+}
+/* === Section d'entête spécifique à la page Deadlift === */
+.deadlift-page .header-section {
+  background-image: url("assets/img_fond_deadlift.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 0px;
+}
+
+.deadlift-page .page-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #b3b3b3;
+  text-align: center;
+}
+
+.deadlift-page .header-description {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: #888888;
+}
+
+/* === Section principale avec fond blanc === */
+.deadlift-page .content-section {
+  background-color: rgb(226, 226, 226);
+  margin: -50px auto 20px; /* Remonte légèrement pour chevaucher l'image */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 1500px;
+}
+
+.deadlift-page .content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.deadlift-page .content-section p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.deadlift-page .quizz-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deadlift-page .quizz-button:hover {
+  background-color: #0056b3;
+}
+.deadlift-page .content-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 20px;
+  gap: 20px; /* Espace entre les colonnes */
+}
+
+.deadlift-page .content-row.reverse {
+  flex-direction: row-reverse; /* Inverse les colonnes */
+}
+
+.deadlift-page .content-row .text {
+  flex: 1; /* Prend une largeur égale */
+  padding-right: 20px;
+}
+
+.deadlift-page .content-row.reverse .text {
+  padding-right: 0;
+  padding-left: 20px;
+}
+
+.deadlift-page .content-row .video {
+  flex: 1; /* Prend une largeur égale */
+}
+
+.deadlift-page .content-row iframe {
+  width: 100%; /* Vidéo prend toute la largeur */
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.deadlift-page .text-between {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.deadlift-page .text-between h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.deadlift-page .text-between p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.deadlift-page .text-between ul {
+  list-style-type: disc;  
+  margin-left: 70px;
+  padding: 0 20px;
+  text-align: left;
+  max-width: 800px;
+}
+
+.deadlift-page .text-between .muscle-image {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.deadlift-page .text-between .muscle-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.deadlift-page .text-between .muscle-image p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
