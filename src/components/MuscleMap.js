@@ -19,19 +19,21 @@ const MuscleMap = () => {
 
   return (
     <div className="muscle-page">
-      <header>
-        <h1 className="page-title" style={{fontSize: "3rem",fontWeight: "bold", }}> Carte des Muscles</h1>
-        <h4 style={{ textAlign: "center" }}>
-          Vous ressentez une gêne ou une douleur ? Ou bien, vous souhaitez juste
-          mieux préparer vos entraînements ?<br></br> Découvrez comment bien
-          échauffer vos muscles pour prévenir les blessures et améliorer vos
-          performances.
-        </h4>
-      </header>
+      {/* Bande grise derrière le titre */}
+      <div className="header-section">
+        <div className="content-wrapper">
+          <h1 className="page-title">Carte des Muscles</h1>
+          <p className="header-description">
+            Découvrez comment bien échauffer vos muscles pour prévenir les
+            blessures et améliorer vos performances. Sélectionnez le groupe
+            musculaire pour en savoir plus.
+          </p>
+        </div>
+      </div>
 
       <main>
         <section>
-          <h2>Comment ça marche ?</h2>
+          <h2>Comment ça marche ?</h2>
           <p>
             Sélectionnez simplement le groupe musculaire qui vous intéresse. Que
             ce soit pour éviter une blessure ou mieux cibler un échauffement,
@@ -58,7 +60,7 @@ const MuscleMap = () => {
 
         <section>
           <p>
-            Important : Ces recommandations ne remplacent pas un avis médical.
+            Important : Ces recommandations ne remplacent pas un avis médical.
             En cas de douleur persistante, prenez rendez-vous avec un
             professionnel de santé.
           </p>
@@ -83,21 +85,20 @@ const MuscleMap = () => {
           <ul>
             {muscleData[selectedMuscle]?.tips?.map((tip, index) => (
               <li key={index}>{tip}</li>
-            ))}
+            ))}{" "}
           </ul>
-          {muscleData[selectedMuscle]?.video && (
-            <div className="video-container">
-              <iframe
-                width="100%"
-                height="315"
-                src={muscleData[selectedMuscle].video}
-                title="Vidéo d'échauffement"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          )}
+          <div className="images-container">
+            <img
+              src={muscleData[selectedMuscle]?.image1}
+              alt={`${muscleData[selectedMuscle]?.name} - Étape 1`}
+              className="muscle-image"
+            />
+            <img
+              src={muscleData[selectedMuscle]?.image2}
+              alt={`${muscleData[selectedMuscle]?.name} - Étape 2`}
+              className="muscle-image"
+            />
+          </div>
           <button className="close-button" onClick={closePopup}>
             Fermer
           </button>
