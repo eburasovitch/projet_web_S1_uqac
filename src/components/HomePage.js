@@ -2,27 +2,27 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <div className="container">
-      <h1>Découvre les Mouvements SBD</h1>
-      <p>
-        Bienvenue sur <strong>SBD Guide</strong>, votre ressource essentielle pour maîtriser
-        les trois piliers de la force : <strong>Squat, Bench Press, et Deadlift</strong>.
-      </p>
-      <p>
-        Ce site est conçu pour vous offrir des explications détaillées, des conseils
-        techniques et des astuces pour éviter les erreurs courantes. Que vous soyez
-        débutant ou pratiquant avancé, vous trouverez ici tout ce dont vous avez besoin
-        pour progresser et améliorer vos performances.
-      </p>
-      <ul>
-        <li>Apprenez les bonnes techniques pour chaque mouvement.</li>
-        <li>Découvrez quels muscles sont sollicités et pourquoi ces exercices sont essentiels.</li>
-        <li>Identifiez les erreurs courantes et comment les corriger.</li>
-      </ul>
-      <p>
-        Prêt à en savoir plus ? Cliquez sur l’un des boutons ci-dessous pour explorer
-        les sections dédiées :
-      </p>
+    <div className="homepage">
+      {/* Image de fond */}
+      <div className="background-image">
+        <h1>Découvre les Mouvements SBD</h1>
+      </div>
+
+      {/* Trois carrés blancs */}
+      <div className="card-container">
+        <div className="card">
+          <h2>Squat</h2>
+          <p>Apprenez les bonnes techniques pour réaliser un Squat parfait.</p>
+        </div>
+        <div className="card">
+          <h2>Bench Press</h2>
+          <p>Découvrez les meilleures pratiques pour un Bench Press efficace.</p>
+        </div>
+        <div className="card">
+          <h2>Deadlift</h2>
+          <p>Maîtrisez les techniques du Deadlift pour maximiser vos gains.</p>
+        </div>
+      </div>
     </div>
   );
 };
