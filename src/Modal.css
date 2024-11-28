@@ -1,25 +1,24 @@
 .modal {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
 .modal-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
     width: 90%;
-    max-width: 800px;
+    max-width: 500px;
     text-align: center;
     position: relative;
-    animation: fadeIn 0.5s ease-out;
 }
 
 .correct {
@@ -84,4 +83,29 @@ input[type="radio"] {
         transform: scale(0.8);
         opacity: 0;
     }
+}
+
+.answer-box.correct {
+    background-color: green;
+    color: white;
+}
+
+/* Mauvaise réponse */
+.answer-box.incorrect {
+    background-color: red;
+    color: white;
+}
+
+.answer-box {
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.answer-box:hover {
+    background-color: rgba(0, 0, 255, 0.1); /* Survol léger */
 }

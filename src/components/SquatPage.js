@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Modal.css";
 
-const DeadliftPage = () => {
+const SquatPage = () => {
     const [isQuizzOpen, setIsQuizzOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -13,6 +13,45 @@ const DeadliftPage = () => {
         setSelectedAnswer(null);
     };
 
+    const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
+    const [answerClass, setAnswerClass] = useState("");
+
+
+    const questions =[
+        {
+            question: "Quelle est la position correcte pour un squat ?",
+            answers: [
+                { text: "Dos courbé avec les genoux dépassant les orteils", isCorrect: false },
+                { text: "Dos droit, pieds à largeur des épaules, regard devant", isCorrect: true },
+                { text: "Genoux serrés et pieds écartés", isCorrect: false },
+            ],
+        },
+        {
+            question: "Quelle profondeur est recommandée pour un squat ?",
+            answers: [
+                { text: "Rester debout sans plier les genoux", isCorrect: false },
+                { text: "Descendre jusqu’à ce que les cuisses soient parallèles au sol", isCorrect: true },
+                { text: "Descendre jusqu’au sol en arrondissant le dos", isCorrect: false },
+            ],
+        },
+        {
+            question: "Quels muscles sont principalement sollicités pendant un squat ?",
+            answers: [
+                { text: "Biceps et triceps", isCorrect: false },
+                { text: "Quadriceps, fessiers, et ischio-jambiers", isCorrect: true },
+                { text: "Mollets uniquement", isCorrect: false },
+            ],
+        },
+        {
+            question: "Comment stabiliser le tronc lors d’un squat ?",
+            answers: [
+                { text: "En contractant les abdominaux et en gardant un dos droit", isCorrect: true },
+                { text: "En arrondissant le dos", isCorrect: false },
+                { text: "En relâchant complètement les abdominaux", isCorrect: false },
+            ],
+        },
+    ];
+
     const closeQuizz = () => {
         setIsClosing(true);
         setTimeout(() => {
@@ -21,8 +60,23 @@ const DeadliftPage = () => {
         }, 500);
     };
 
-    const handleAnswerChange = (event) => {
-        setSelectedAnswer(event.target.value);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+
+    const handleAnswerClick = (isCorrect, index) => {
+        setSelectedAnswerIndex(index);
+        setAnswerClass(isCorrect ? "correct" : "incorrect");
+
+        setTimeout(() => {
+            setAnswerClass("");
+            setSelectedAnswerIndex(null);
+
+            const nextQuestion = currentQuestion + 1;
+            if (nextQuestion < questions.length) {
+                setCurrentQuestion(nextQuestion);
+            } else {
+                closeQuizz();
+            }
+        }, 1000);
     };
 
     const handleSubmit = (event) => {
@@ -157,12 +211,11 @@ const DeadliftPage = () => {
                 {/* Quizz */}
                 <div className="quiz-section">
                     <button onClick={openQuizz} className="quizz-button">
-                        Lancer le Quizz Deadlift
+                        Lancer le Quizz Squat
                     </button>
                 </div>
             </div>
 
-            {/* Section pour le quiz */}
             {isQuizzOpen && (
                 <div className="modal" onClick={closeQuizz}>
                     <div
@@ -170,49 +223,34 @@ const DeadliftPage = () => {
                         onClick={(e) => e.stopPropagation()}
                     >
             <span className="close" onClick={closeQuizz}>
-              &times;
+                &times;
             </span>
-                        <h2>Quizz Deadlift</h2>
-                        <p>Quelle est la position correcte pour un deadlift ?</p>
-                        <form onSubmit={handleSubmit}>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="q1"
-                                    value="dos"
-                                    onChange={handleAnswerChange}
-                                />{" "}
-                                Dos courbé vers l’avant
-                            </label>
-                            <br />
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="q1"
-                                    value="correct"
-                                    onChange={handleAnswerChange}
-                                />{" "}
-                                Dos droit, pieds à largeur des épaules
-                            </label>
-                            <br />
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="q1"
-                                    value="bras"
-                                    onChange={handleAnswerChange}
-                                />{" "}
-                                Bras complètement relâchés
-                            </label>
-                            <br />
-                            <button type="submit">Valider</button>
-                        </form>
-                        {feedback && <p>{feedback}</p>}
+
+                        <h2>Quizz Squat</h2>
+                        <p>{questions[currentQuestion].question}</p>
+
+                        <div className="answers">
+                            {questions[currentQuestion].answers.map((answer, index) => (
+                                <div
+                                    key={index}
+                                    className={`answer-box ${
+                                        index === selectedAnswerIndex ? answerClass : ""
+                                    }`}
+                                    onClick={() => handleAnswerClick(answer.isCorrect, index)}
+                                >
+                                    {answer.text}
+                                </div>
+                            ))}
+                        </div>
+
+                        {feedback && <p className="feedback">{feedback}</p>}
                     </div>
                 </div>
             )}
+
+
         </div>
     );
 };
 
-export default DeadliftPage;
+export default SquatPage;
