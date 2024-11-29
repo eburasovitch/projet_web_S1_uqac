@@ -83,51 +83,62 @@ const BenchPage = () => {
 
     return (
         <div className="bench-page">
+            <header className="bench-header">
+                <h1 style={{ color: "rgb(209, 207, 207)", fontSize: "4rem" }}>Bench Press</h1>
+                <p style={{ color: "rgb(209, 207, 207)"}}> Explorez les secrets pour maîtriser le Bench Press et développer votre force.</p>
+            </header>
+
             <div className="content-section">
+                <div className="introduction">
+                    <h2>Pourquoi le Bench Press est essentiel</h2>
+                    <p>
+                        Le Bench Press est l'un des exercices les plus pratiqués pour développer la force du haut du corps.
+                        Il cible principalement les pectoraux, les épaules et les triceps. Bien exécuté, il peut prévenir les
+                        blessures et maximiser les performances.
+                    </p>
+                </div>
+
+                {/* Section avec images */}
+                <div className="image-section">
+                    <h2>Position correcte</h2>
+                    <img
+                        src="/assets/position_bench.jpg"
+                        alt="Position correcte pour le Bench Press"
+                        className="image-full"
+                    />
+                    <p style={{ textAlign: "center" }}>Assurez-vous que votre dos est légèrement cambré et vos pieds bien ancrés au sol.</p>
+
+                    <h2>Groupes musculaires sollicités</h2>
+                    <img
+                        src="/assets/groupe_bench.jpg"
+                        alt="Muscles sollicités par le Bench Press"
+                        className="image-full"
+                    />
+                    <p style={{ textAlign: "center" }}>Les muscles principaux travaillés incluent les pectoraux, les triceps et les deltoïdes.</p>
+                </div>
+
                 <div className="content-row">
                     <div className="text">
-                        <h2>Importance du Bench Press</h2>
+                        <h2>Conseils pour un Bench Press parfait</h2>
                         <p>
-                            Le Bench Press est un exercice de base pour le développement de la force du haut du corps, en ciblant principalement les muscles pectoraux, les triceps et les épaules.
-                        </p>
-                        <p>
-                            Une technique correcte est essentielle pour maximiser les gains musculaires tout en réduisant les risques de blessures aux épaules et aux coudes.
+                            Voici quelques conseils pour optimiser vos performances :
+                            <ul>
+                                <li>Échauffez vos épaules avant chaque séance.</li>
+                                <li>Adoptez une prise légèrement plus large que vos épaules.</li>
+                                <li>Maintenez une position stable avec un léger arc dans le dos.</li>
+                            </ul>
                         </p>
                     </div>
                     <div className="video">
-                        <iframe
-                            src="https://www.youtube.com/embed/VIDEO_ID"
-                            title="Vidéo Bench Press"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dHadZyPflHQ?si=kveqrp5u1iUF-xPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
 
-                <div className="text-between">
-                    <h2>Muscles sollicités par le Bench Press</h2>
-                    <p>
-                        Le Bench Press cible une variété de muscles. Voici les principaux groupes musculaires impliqués :
-                    </p>
-                    <ul>
-                        <li>
-                            <strong>Pectoraux :</strong> Les muscles principaux sollicités pour pousser la barre.
-                        </li>
-                        <li>
-                            <strong>Triceps :</strong> Contribuent à l'extension des bras.
-                        </li>
-                        <li>
-                            <strong>Épaules :</strong> Stabilisent le mouvement pendant l'exercice.
-                        </li>
-                        <li>
-                            <strong>Muscles du tronc :</strong> Aident à maintenir une position stable sur le banc.
-                        </li>
-                    </ul>
-                </div>
-
+                {/* Section de Quizz */}
                 <div className="quiz-section">
+                    <h2>Testez vos connaissances</h2>
                     <button onClick={openQuizz} className="quizz-button">
-                        Lancer le Quizz Bench Press
+                        Lancer le Quizz
                     </button>
                 </div>
             </div>

@@ -50,14 +50,14 @@ button,
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #552f2f;
   color: white;
   transition: background-color 0.3s ease;
 }
 
 button:hover,
 .close-button:hover {
-  background-color: #0056b3;
+  background-color: #772b2b;
 }
 
 .container {
@@ -73,7 +73,7 @@ button:hover,
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #4a90e2;
+  background-color: #5f3a3a;
   color: white;
   padding: 10px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -241,8 +241,9 @@ path:hover {
 
 /* === Page principale === */
 .muscle-page {
+  background-color: #e9e9e9;
   line-height: 1.5;
-}
+} 
 
 .muscle-page main {
   margin-left: 100px; /* Ajoute un espace à gauche */
@@ -301,20 +302,6 @@ path:hover {
   line-height: 1.6;
 }
 
-.deadlift-page .quizz-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.deadlift-page .quizz-button:hover {
-  background-color: #0056b3;
-}
 .deadlift-page .content-row {
   display: flex;
   align-items: center;
@@ -515,20 +502,9 @@ path:hover {
   line-height: 1.6;
 }
 
-.squat-page .quizz-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-.squat-page .quizz-button:hover {
-  background-color: #0056b3;
-}
+
+
 .squat-page .content-row {
   display: flex;
   align-items: center;
@@ -605,18 +581,19 @@ path:hover {
   color: #555;
 }
 
+
 .bench-page {
-  background-color: #e0e0e0; /* Couleur gris clair */
+  background-color: #2e2e2e; /* Couleur gris clair */
   min-height: 100vh; /* Assure que le fond couvre toute la hauteur de la fenêtre */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
   justify-content: flex-start;
   padding: 20px 0;
 }
 
 .bench-page .content-section {
-  background-color: white;
+  background-color: rgb(216, 216, 216);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -638,7 +615,7 @@ path:hover {
 }
 
 .bench-page .content-row .video iframe {
-  width: 100%;
+  width: 700px;
   height: 300px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -657,4 +634,13 @@ path:hover {
 .bench-page .image-section {
   text-align: center;
   margin: 20px 0;
+}
+
+.bench-page .image-section img {
+  width: 50%; /* Réduit la largeur à 80% de son conteneur */
+  height: auto; /* Maintient le ratio d'aspect */
+  max-height: 300px; /* Définit une hauteur maximale */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour un effet esthétique */
+  margin-bottom: 10px;
 }

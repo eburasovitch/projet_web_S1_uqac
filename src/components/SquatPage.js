@@ -119,12 +119,7 @@ const DeadliftPage = () => {
             </p>
           </div>
           <div className="video">
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID_1"
-              title="Vidéo Deadlift 1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/MF04713ZLmo?si=eBQFcUwQer2Nfncy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
 
@@ -200,12 +195,7 @@ const DeadliftPage = () => {
             </p>
           </div>
           <div className="video">
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID_2"
-              title="Vidéo Deadlift 2"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GR7x1bgSsqo?si=-erH1qJh6auWOa0R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
 
